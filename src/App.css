@@ -1,20 +1,53 @@
-.App {
+body {
+  --light-grey: #a6a6a6;
+  --dark-grey: #333333;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+  color: #00ffff
+}
+
+h3 {
+  margin-bottom: 0.5rem;
+  color: #00ffff
+}
+
+th,
+td {
+  padding: 0.75rem;
+}
+
+table {
+  border-bottom: 1px solid white;
+}
+
+button {
+  background-color: var(--dark-grey);
+  /* margin-left: 2rem; */
+  color: white;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+button:hover {
+  background-color: blue;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.app {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +57,77 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.calculator-container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px 100px;
+  width: auto;
+  height: auto;
+  border-bottom: 1px solid white;
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculator-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  /* border: solid 1px black; */
+  border-radius: 2.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #333333;
+
+  transition: background-color 0.25s;
 }
+
+.calculator-button-enlarged {
+  grid-column: span 2
+}
+
+.calculator-button-highlighted {
+  background-color: var(--light-grey);
+  color: black;
+}
+
+.calculator-button:hover {
+  background-color: blue;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  /* border-bottom: 1px solid white; */
+  margin-bottom: 1rem;
+}
+
+.main-display {
+  font-size: 3rem;
+  flex-grow: 1;
+  min-height: 4rem;
+  /* min-height: 50%; */
+}
+
+.sub-display {
+  font-size: 1.5rem;
+  flex-grow: 1;
+  min-height: 2rem;
+}
+
+
+.past-calculation-button {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.clear-past-calculations-button {
+  margin-top: 1rem;
+}
+
+/* .footer {
+  background-color: darkblue;
+} */
